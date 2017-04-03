@@ -22,21 +22,26 @@ Class Program
 
         DrawPaddle(BrainPad.Color.White)
 
-        Dim playGame As Boolean = True
-        While playGame
+        While Not BrainPad.Button.IsLeftPressed()
             'Move the paddle if necessary
-            If (BrainPad.Button.IsLeftPressed) Then
-                playGame = False
-            ElseIf (BrainPad.Button.IsUpPressed) Then
+            If (BrainPad.Button.IsUpPressed()) Then
                 If (paddleY > 4) Then
                     ErasePaddle()
                     paddleY = paddleY - 4
                     DrawPaddle(BrainPad.Color.White)
+                Else
+                    ErasePaddle()
+                    paddleY = 0
+                    DrawPaddle(BrainPad.Color.White)
                 End If
-            ElseIf (BrainPad.Button.IsDownPressed) Then
+            ElseIf (BrainPad.Button.IsDownPressed()) Then
                 If (paddleY < (126 - paddleHeight)) Then
                     ErasePaddle()
                     paddleY = paddleY + 4
+                    DrawPaddle(BrainPad.Color.White)
+                Else
+                    ErasePaddle()
+                    paddleY = 127 - paddleHeight
                     DrawPaddle(BrainPad.Color.White)
                 End If
             End If
