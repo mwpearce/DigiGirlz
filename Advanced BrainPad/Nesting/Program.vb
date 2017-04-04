@@ -6,8 +6,8 @@ Class Program
         While BrainPad.Looping
             count = 1
             While count <= 10
-                BrainPad.WriteDebugMessage("Count: " + count.ToString())
                 count = count + 1
+                BrainPad.WriteDebugMessage("Count: " + count.ToString())
             End While
         End While
     End Sub

@@ -1,28 +1,27 @@
 Class Program
-    Dim level As Double
-    Dim threshold As Double
-
+    Dim count As Integer
     Public Sub BrainPadSetup()
         'Put your setup code here. It runs once when the BrainPad starts up.
 
-        level = 0
-        threshold = 0.5
+        count = 0
     End Sub
 
     Public Sub BrainPadLoop()
         'Put your program code here. It runs repeatedly after the BrainPad starts up.
 
-        If BrainPad.Button.IsUpPressed() Then
-            threshold = BrainPad.LightSensor.ReadLightLevel()
-        End If
+        Dim level As Double
 
         level = BrainPad.LightSensor.ReadLightLevel()
-        BrainPad.WriteDebugMessage(level)
 
-        If level > threshold Then
-            BrainPad.LightBulb.TurnOn()
-        Else
-            BrainPad.LightBulb.TurnOff()
+        If BrainPad.Button.IsUpPressed() Then
+            If level > 0.6 Then
+                BrainPad.WriteDebugMessage("Count: " + count.ToString())
+                count = count + 1
+                If count > 10 Then
+                    count = 0
+                End If
+            End If
         End If
+
     End Sub
 End Class

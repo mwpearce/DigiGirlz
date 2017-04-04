@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AssemblyName>Exercise3</AssemblyName>
+    <AssemblyName>Exercise4</AssemblyName>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exercise3</RootNamespace>
+    <RootNamespace>Exercise4</RootNamespace>
     <ProjectTypeGuids>{bb063c12-22d6-4e50-a55f-f678d783e61d};{F184B08F-C81C-45f6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D57F0785-88DE-4D73-8E2C-BF25CC7E00E9}</ProjectGuid>
+    <ProjectGuid>{32C7EF40-A7D8-4EF0-8FAC-24428946229C}</ProjectGuid>
     <MyType />
     <AssemblyBothEndian>true</AssemblyBothEndian>
     <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>

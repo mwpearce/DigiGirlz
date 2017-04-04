@@ -1,6 +1,6 @@
 Class Program
 
-    Dim frequency As Integer
+    Dim frequency As Double
     Dim increment As Integer
 
     Public Sub BrainPadSetup()

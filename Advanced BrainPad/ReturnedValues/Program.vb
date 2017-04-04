@@ -11,7 +11,7 @@ Class Program
         'Put your program code here. It runs repeatedly after the BrainPad starts up.
 
         level = BrainPad.LightSensor.ReadLightLevel()
-        BrainPad.WriteDebugMessage(level)
+        BrainPad.Display.DrawText(0, 0, level.ToString(), BrainPad.Color.White)
 
         If level > 0.5 Then
             BrainPad.LightBulb.TurnOn()

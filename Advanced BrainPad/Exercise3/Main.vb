@@ -3,7 +3,7 @@ Option Strict On
 
 Imports System.Threading
 
-Namespace Exercise3
+Namespace Exercise4
     Module Startup
         Sub Main()
             Dim p = New Program()
