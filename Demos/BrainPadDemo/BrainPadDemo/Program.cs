@@ -336,6 +336,19 @@ class Program
             case progDemo.Temperature:
                 finTemp = false;
 
+                if (temperature >= 77)
+                {
+                    stateTemp = colorTemp.green;
+                }
+                else if (temperature >= 76)
+                {
+                    stateTemp = colorTemp.blue;
+                }
+                else
+                {
+                    stateTemp = colorTemp.red;
+                }
+
                 switch (stateTemp)
                 {  
                     case colorTemp.blue:
@@ -344,9 +357,7 @@ class Program
                             BrainPad.Display.DrawLine(4, 37 + i, 155, 37 + i, BrainPad.Color.Blue);
                             BrainPad.Display.DrawLine(4, 87 + i, 155, 87 + i, BrainPad.Color.Blue);
                         }
-                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + "dC", BrainPad.Color.Blue);
-                        if (temperature >= 19.2)
-                            stateTemp = colorTemp.green;
+                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + " F", BrainPad.Color.Blue);
                         break;
 
                     case colorTemp.green:
@@ -355,9 +366,7 @@ class Program
                             BrainPad.Display.DrawLine(4, 37 + i, 155, 37 + i, BrainPad.Color.Green);
                             BrainPad.Display.DrawLine(4, 87 + i, 155, 87 + i, BrainPad.Color.Green);
                         }
-                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + "dC", BrainPad.Color.Green);
-                        if (temperature >= 21) stateTemp = colorTemp.red;
-                        else if (temperature <= 19) stateTemp = colorTemp.blue;
+                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + " F", BrainPad.Color.Green);
                         break;
 
                     case colorTemp.red:
@@ -366,8 +375,7 @@ class Program
                             BrainPad.Display.DrawLine(4, 37 + i, 155, 37 + i, BrainPad.Color.Red);
                             BrainPad.Display.DrawLine(4, 87 + i, 155, 87 + i, BrainPad.Color.Red);
                         }
-                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + "dC", BrainPad.Color.Red);
-                        if (temperature <= 20.8) stateTemp = colorTemp.green;
+                        BrainPad.Display.DrawExtraLargeText(5, 50, temperature.ToString("F1") + " F", BrainPad.Color.Red);
                         break;
 
                     default:
@@ -483,5 +491,6 @@ class Program
     public static void OnTimer(object state)
     {
         temperature = BrainPad.TemperatureSensor.ReadTemperature();
+        temperature = temperature * (9.0 / 5.0) + 32.0;
     }
 }
