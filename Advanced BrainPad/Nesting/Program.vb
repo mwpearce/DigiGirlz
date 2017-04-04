@@ -3,7 +3,7 @@ Class Program
         'Put your setup code here. It runs once when the BrainPad starts up.
 
         Dim count As Integer
-        While True
+        While BrainPad.Looping
             count = 1
             While count <= 10
                 BrainPad.WriteDebugMessage("Count: " + count.ToString())
